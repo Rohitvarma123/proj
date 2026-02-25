@@ -10,14 +10,6 @@
 
     <build>
         <sourceDirectory>src</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>src</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
 
         <plugins>
             <!-- Compiler plugin -->
@@ -39,7 +31,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Dependency plugin to copy webapp-runner -->
+            <!-- Dependency plugin for webapp-runner -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -64,7 +56,7 @@
                 </executions>
             </plugin>
 
-            <!-- Snyk plugin for security -->
+            <!-- Snyk plugin -->
             <plugin>
                 <groupId>io.snyk</groupId>
                 <artifactId>snyk-maven-plugin</artifactId>
@@ -78,28 +70,28 @@
     </build>
 
     <dependencies>
-        <!-- PostgreSQL JDBC -->
+        <!-- PostgreSQL JDBC (Trivy-safe) -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.2</version> <!-- Trivy safe -->
+            <version>42.7.2</version>
         </dependency>
 
-        <!-- MySQL JDBC -->
+        <!-- MySQL JDBC (Trivy-safe) -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.1.0</version> <!-- Trivy safe -->
+            <version>8.1.0</version>
         </dependency>
 
-        <!-- Google Protobuf -->
+        <!-- Protobuf (Trivy-safe) -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.28.0</version> <!-- Trivy safe -->
+            <version>3.28.0</version>
         </dependency>
 
-        <!-- Servlet API (provided by Tomcat) -->
+        <!-- Servlet API provided by Tomcat -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -107,5 +99,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>
