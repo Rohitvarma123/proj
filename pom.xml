@@ -1,6 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>TrainBook</groupId>
@@ -9,7 +10,13 @@
     <packaging>war</packaging>
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
+        <!-- Standard Maven structure -->
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
 
         <plugins>
             <!-- Compiler plugin -->
@@ -70,28 +77,28 @@
     </build>
 
     <dependencies>
-        <!-- PostgreSQL JDBC (Trivy-safe) -->
+        <!-- PostgreSQL JDBC -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.2</version>
         </dependency>
 
-        <!-- MySQL JDBC (Trivy-safe) -->
+        <!-- MySQL JDBC -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.1.0</version>
         </dependency>
 
-        <!-- Protobuf (Trivy-safe) -->
+        <!-- Protobuf -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>3.28.0</version>
         </dependency>
 
-        <!-- Servlet API provided by Tomcat -->
+        <!-- Servlet API (provided by Tomcat) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
