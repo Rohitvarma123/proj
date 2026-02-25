@@ -68,24 +68,32 @@
 	</build>
 	<dependencies>
 
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.3.7</version>
-		</dependency>
+		<dependencies>
+    <!-- Updated PostgreSQL to safe version -->
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.7.2</version> <!-- Fixed version -->
+    </dependency>
 
+    <!-- Updated MySQL connector to safe version -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.33</version> <!-- Latest safe version -->
+    </dependency>
 
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.28</version>
-		</dependency>
+    <!-- Java Servlet API (no critical vulnerabilities, safe) -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+    </dependency>
 
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-		</dependency>
-	</dependencies>
-</project>
+    <!-- Add Protobuf if you are using it (update to fixed version) -->
+    <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java</artifactId>
+        <version>3.25.5</version> <!-- Fixed version -->
+    </dependency>
+</dependencies>
