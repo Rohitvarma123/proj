@@ -20,6 +20,7 @@
         </resources>
 
         <plugins>
+            <!-- Compiler plugin -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -29,6 +30,7 @@
                 </configuration>
             </plugin>
 
+            <!-- WAR plugin -->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.3</version>
@@ -37,6 +39,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Dependency plugin to copy webapp-runner -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -61,6 +64,7 @@
                 </executions>
             </plugin>
 
+            <!-- Snyk plugin for security -->
             <plugin>
                 <groupId>io.snyk</groupId>
                 <artifactId>snyk-maven-plugin</artifactId>
@@ -74,28 +78,33 @@
     </build>
 
     <dependencies>
+        <!-- PostgreSQL JDBC -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.2</version>
+            <version>42.7.2</version> <!-- Trivy safe -->
         </dependency>
 
+        <!-- MySQL JDBC -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.1.0</version>
+            <version>8.1.0</version> <!-- Trivy safe -->
         </dependency>
 
+        <!-- Google Protobuf -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.28.0</version>
+            <version>3.28.0</version> <!-- Trivy safe -->
         </dependency>
 
+        <!-- Servlet API (provided by Tomcat) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
